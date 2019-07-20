@@ -24,6 +24,15 @@ class Instructor extends Person{
     grade = function(student, subject){
         console.log(`${student.name} recieves a perfect score on ${subject}`);
     };
+
+    checkAssignment = function(student){
+        let value = [1,-1];
+        let correction = Math.floor(Math.random() * 30);
+        var rand = value[Math.floor(Math.random() * value.length)];
+        correction = rand*correction;
+        student.grade += correction;
+        console.log(`${this.name} graded an assignment and made a ${correction} point correction to ${student.name}'s grade, which is now ${student.grade}`);
+    };
 }
 
 class Student extends Person{
@@ -32,6 +41,7 @@ class Student extends Person{
         this.previousBackground = atts.previousBackground;
         this.className = atts.className;
         this.favSubjects = atts.favSubjects;
+        this.grade = atts.grade;
     }
     listSubjects = function(){
         this.favSubjects.forEach(function(item, index, array){
@@ -44,6 +54,14 @@ class Student extends Person{
     sprintChallenge = function(subject){
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
+
+    graduate = function(){
+        if(this.grade > 70){
+            console.log(`${this.name} has graduated from ${this.className}`);
+        } else {
+            console.log(`${this.name} doesn't meet the requirements for graduation. Keep studying!`);
+        }
+    };
 }
 
 class ProjectManager extends Instructor{
@@ -75,7 +93,8 @@ let krishan = new Student({
     location: "USA",
     previousBackground: "Self-Study",
     className: "WEB22",
-    favSubjects: ["Javascript", "CSS", "PHP"]
+    favSubjects: ["Javascript", "CSS", "PHP"],
+    grade: 80
 });
 
 brit.demo("Javascript Closures");
@@ -103,3 +122,15 @@ shannon.debugsCode(krishan);
 shannon.demo("Javascript Callbacks");
 shannon.grade(krishan, "Javascript III");
 shannon.standUp("Web22_Shannon");
+
+
+
+shannon.checkAssignment(krishan);
+brit.checkAssignment(krishan);
+krishan.graduate();
+
+while(krishan.grade <= 70){
+    shannon.checkAssignment(krishan);
+    brit.checkAssignment(krishan);
+    krishan.graduate();
+}
