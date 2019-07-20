@@ -199,14 +199,14 @@ const angel = new Hero({
   language: "Demoniac"
 });
 
-window.setInterval(function() {
-  if (angel.healthPoints > 0) {
-    angel.justiceStrike(demon);
-  }
-  if (demon.healthPoints > 0) {
-    demon.sneakAttack(angel);
-  }
-  if (angel.healthPoints < 1 || demon.healthPoints < 1) {
-    clearInterval();
-  }
-}, 1000);
+// window.setInterval(function() {
+//   if (angel.healthPoints > 0) {
+//     angel.justiceStrike(demon);
+//   }
+//   if (demon.healthPoints > 0) {
+//     demon.sneakAttack(angel);
+//   }
+//   if (angel.healthPoints < 1 || demon.healthPoints < 1) {
+//     clearInterval();
+//   }
+// }, 1000);
