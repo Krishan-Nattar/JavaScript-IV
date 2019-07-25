@@ -99,6 +99,16 @@ const brit = new Instructor({
   catchPhrase: "Good Morning Everyone!"
 });
 
+const josh = new Instructor({
+  name: "Josh",
+  age: 25,
+  location: "New York",
+  specialty: "C++",
+  favLanguage: "Swift",
+  catchPhrase: "'Ello!"
+});
+
+
 let krishan = new Student({
   name: "Krishan",
   age: 33,
@@ -109,14 +119,35 @@ let krishan = new Student({
   grade: 80
 });
 
+let billy = new Student({
+  name: "Billy",
+  age: 57,
+  location: "Texas",
+  previousBackground: "None",
+  className: "WEB20",
+  favSubjects: ["Javascript", "HTML", "Python"],
+  grade: 80
+});
+
+
+
 brit.demo("Javascript Closures");
 brit.grade(krishan, "EVERY PROJECT!");
 brit.speak();
+
+josh.demo("Callback functions");
+josh.grade(billy, "Today's Sprint Challenge");
+josh.speak();
 
 krishan.speak();
 krishan.listSubjects();
 krishan.PRAssignment("Javascipt IV");
 krishan.sprintChallenge("Javascript Fundamentals");
+
+billy.speak();
+billy.listSubjects();
+billy.PRAssignment("React Fundamentals");
+billy.sprintChallenge("C algorithms");
 
 const shannon = new ProjectManager({
   name: "Shannon",
@@ -128,6 +159,24 @@ const shannon = new ProjectManager({
   gradClassName: "Web15",
   favInstructor: "Josh"
 });
+
+
+const mike = new ProjectManager({
+  name: "Mike",
+  age: 21,
+  location: "Brazil",
+  specialty: "Jack of all trades",
+  favLanguage: "VBA",
+  catchPhrase: "YOYOYO!",
+  gradClassName: "Web3",
+  favInstructor: "Brit"
+});
+
+mike.speak();
+mike.debugsCode(billy, "CSS Flexbox");
+mike.demo("Redux");
+mike.grade(billy, "Hooks");
+mike.standUp("Web3_Mike");
 
 shannon.speak();
 shannon.debugsCode(krishan, "Javascript IV");
